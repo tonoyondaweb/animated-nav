@@ -24,22 +24,31 @@ body {
 .overlay{
   position: fixed;
   z-index: 9;
-  height: 100vh;
+  top: 0;
+  left: 0;
   width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(100vw);
+}
+
+.overlay-slide-left{
+  transition: all 0.4s ease-in-out;
+  transform: translateX(0);
+}
+
+.overlay-slide-right{
+  transition: all 0.8s ease-in-out;
+  transform: translateX(100vw);
 }
 
 nav, nav ul{
-  top: 0;
-  left: 0;
   height: 100vh;
-  width: 100vw;
   margin: 0;
   padding: 0;
 }
 
 nav ul{
-  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -55,6 +64,7 @@ nav li a{
   position: relative;
   top: 45%;
   text-decoration: none;
+  letter-spacing: 4px;
   color: #fff;
   text-transform: uppercase;
   display: block;
